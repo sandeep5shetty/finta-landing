@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+
+
+.animate-ping {
+  animation: ping 1s steps(1, end) infinite !important;
+
+  @keyframes ping {
+
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
