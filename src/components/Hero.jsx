@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import Btn from "./Btn";
-import dashboardImage from "../assets/hero-ui-v5.webp"
+import dashboardImage from "../assets/hero-ui-v5.webp";
 
 const Hero = () => {
   // Get current time and format as h:mm AM/PM
@@ -9,7 +9,7 @@ const Hero = () => {
   const hours = now.getHours();
   const minutes = now.getMinutes().toString().padStart(2, "0");
   const ampm = hours >= 12 ? "pm" : "am";
-  const displayHour = ((hours + 11) % 12 + 1); // converts 0-23 to 1-12
+  const displayHour = ((hours + 11) % 12) + 1; // converts 0-23 to 1-12
 
   return (
     <div className="hero-container flex justify-center flex-col items-center mt-18 px-4">
@@ -19,7 +19,7 @@ const Hero = () => {
           href="#"
           className="bg-gray-200/70 border border-gray-300 rounded-full hover:bg-slate-200 hover:-translate-y-1 px-3 py-1.5 duration-200 tracking-wide text-xs"
         >
-          How to work with lawyers
+          Cap table basics
           <FaArrowRight
             size={10}
             color="[#1E1F25]"
@@ -36,13 +36,20 @@ const Hero = () => {
         <p className="text-lg text-gray-700/90 max-w-xl mx-auto text-center px-4 tracking-wide my-6">
           Automated bookkeeping, effortless tax filing, real‑time insights. Set
           up in 10 mins. Back to building by{" "}
-          <span>{displayHour}<span className="animate-ping">:</span>{minutes}{ampm}</span>.
+          <span>
+            {displayHour}
+            <span className="animate-ping">:</span>
+            {minutes}
+            {ampm}
+          </span>
+          .
         </p>
       </div>
       <div className="hero-cta flex items-center gap-2">
-        <Btn text="Get started"/>
-        <button className=" tracking-wide text-black px-3 py-2 font-semibold text-sm rounded-lg bg-transparent hover:bg-black/10 cursor-pointer duration-200">Pricing
-        <FaArrowRight
+        <Btn text="Get started" />
+        <button className=" tracking-wide text-black px-3 py-2 font-semibold text-sm rounded-lg bg-transparent hover:bg-black/10 cursor-pointer duration-200">
+          Pricing
+          <FaArrowRight
             size={10}
             color="[#1E1F25]"
             opacity={0.5}
@@ -51,11 +58,12 @@ const Hero = () => {
         </button>
       </div>
       <div className="hero-short-text my-7">
-        <p className="text-sm text-gray-500/80">Currently for US-based Delaware C-Corps.</p>
+        <p className="text-sm text-gray-500/80">
+          Currently for US-based Delaware C-Corps.
+        </p>
       </div>
 
       <div className="img-container relative mt-10">
-
         <div
           id="center-line"
           className="h-[2px] w-full  z-10 absolute bg-gradient-to-r
@@ -64,9 +72,10 @@ const Hero = () => {
         ></div>
 
         <img
-        className="rounded-xl shadow-2xl object-cover object-top-left mask-b-from-20% to-40%"
-        src={dashboardImage} alt="Dashboard Image" />
-
+          className="rounded-xl shadow-2xl object-cover object-top-left mask-b-from-20% to-40%"
+          src={dashboardImage}
+          alt="Dashboard Image"
+        />
       </div>
     </div>
   );
