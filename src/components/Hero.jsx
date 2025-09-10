@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="flex items-center  font-semibold">
         <a
           href="#"
-          className="bg-gray-200/70 border border-gray-300 rounded-full hover:bg-slate-200 px-3 py-1.5 duration-200 tracking-wide text-xs"
+          className="bg-gray-200/70 border border-gray-300 rounded-full hover:bg-slate-200 hover:-translate-y-1 px-3 py-1.5 duration-200 tracking-wide text-xs"
         >
           How to work with lawyers
           <FaArrowRight
@@ -54,7 +54,15 @@ const Hero = () => {
         <p className="text-sm text-gray-500/80">Currently for US-based Delaware C-Corps.</p>
       </div>
 
-      <div className="img-container mt-10">
+      <div className="img-container relative mt-10">
+
+        <div
+          id="center-line"
+          className="h-[2px] w-full  z-10 absolute bg-gradient-to-r
+           from-neutral-200/20 via-neutral-300/50 to-neutral-200/20
+           right-0 -top-8"
+        ></div>
+
         <img
         className="rounded-xl shadow-2xl object-cover object-top-left mask-b-from-20% to-40%"
         src={dashboardImage} alt="Dashboard Image" />

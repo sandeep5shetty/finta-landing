@@ -14,7 +14,7 @@ const App = () => {
         ></div>
         <div
           id="right-line"
-          className="w-px h-full z-10 absolute bg-gradient-to-b
+          className="w-[2px] h-full z-10 absolute bg-gradient-to-b
            from-neutral-200 via-neutral-300/50 to-transparent 
            -right-2 top-0"
         ></div>
