@@ -3,7 +3,6 @@ import logo from '../assets/finta-logo.svg';
 import Btn from './Btn';
 import { IconMenu2 } from '@tabler/icons-react';
 import { IconX } from '@tabler/icons-react';
-import { RxHamburgerMenu } from 'react-icons/rx';
 
 const Navbar = () => {
   const navLinks = [
@@ -15,8 +14,8 @@ const Navbar = () => {
 
   const [open, setOpen] = useState(false);
   return (
-    <div className="navbar-container px-4">
-      <header className="flex items-center justify-between px-2 py-4">
+    <div className="navbar-container px-5">
+      <header className="flex items-center justify-between px-2 py-6">
         <div className="logo-section">
           <a href="#">
             <img height={70} width={70} src={logo} alt="Finta-Logo" />
@@ -43,15 +42,15 @@ const Navbar = () => {
         />
 
         {open && (
-          <div className="sidebar-section shadow-sandy absolute inset-x-0 top-0 z-10 m-4 flex h-[40%] flex-col items-center gap-3 rounded-lg bg-slate-50 p-4 transition duration-200 sm:hidden">
+          <div className="sidebar-section shadow-sandy absolute inset-x-0 top-0 z-10 m-4 flex flex-col items-center gap-3 rounded-lg bg-slate-50 p-4 pb-8 transition duration-200 sm:hidden">
             <IconX
-              className="absolute top-4 right-4"
+              className="absolute top-2 right-3"
               onClick={() => setOpen(!open)}
             />
-            <a href="#" className="py-10">
+            <a href="#" className="py-6">
               <img height={85} width={85} src={logo} alt="Finta-Logo" />
             </a>
-            <ul className="flex flex-col items-center justify-center gap-7 text-sm">
+            <ul className="mb-6 flex flex-col items-center justify-center gap-6 text-sm">
               {navLinks.map((navLink) => (
                 <li
                   className="font-semibold tracking-wide duration-200 text-shadow-neutral-950 hover:text-neutral-500"
@@ -60,8 +59,8 @@ const Navbar = () => {
                   <a href={navLink.href}>{navLink.title}</a>
                 </li>
               ))}
-              <Btn text="Get started" isPrimary="true" />
             </ul>
+            <Btn text="Get started" isPrimary="true" />
           </div>
         )}
       </header>

@@ -1,41 +1,41 @@
-import React from "react";
-import { FaArrowRight } from "react-icons/fa";
-import Btn from "./Btn";
-import dashboardImage from "../assets/hero-ui-v5.webp";
+import React from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+import Btn from './Btn';
+import dashboardImage from '../assets/hero-ui-v5.webp';
 
 const Hero = () => {
   // Get current time and format as h:mm AM/PM
   const now = new Date();
   const hours = now.getHours();
-  const minutes = now.getMinutes().toString().padStart(2, "0");
-  const ampm = hours >= 12 ? "pm" : "am";
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'pm' : 'am';
   const displayHour = ((hours + 11) % 12) + 1; // converts 0-23 to 1-12
 
   return (
-    <div className="hero-container flex justify-center flex-col items-center mt-18 px-4">
+    <div className="hero-container mt-6 flex flex-col items-center justify-center px-4 md:mt-18">
       {/* badge */}
-      <div className="flex items-center  font-semibold">
+      <div className="flex items-center font-semibold">
         <a
           href="#"
-          className="bg-gray-200/70 border border-gray-300 rounded-full hover:bg-slate-200 hover:-translate-y-1 px-3 py-1.5 duration-200 tracking-wide text-xs"
+          className="rounded-full border border-gray-300 bg-gray-200/70 px-3 py-1.5 text-xs tracking-wide duration-200 hover:-translate-y-1 hover:bg-slate-200"
         >
           Cap table basics
           <FaArrowRight
             size={10}
             color="[#1E1F25]"
             opacity={0.5}
-            className="inline-block ml-2"
+            className="ml-2 inline-block"
           />
         </a>
       </div>
 
-      <div className="hero-text max-w-2xl text-center mt-10">
-        <h1 className="text-6xl font-semibold tracking-tight leading-17 text-shadow-neutral-900">
+      <div className="hero-text mt-10 max-w-2xl text-center">
+        <h1 className="text-5xl leading-14 font-semibold tracking-tight text-shadow-neutral-900 md:text-6xl md:leading-17">
           Magically simplify accounting and taxes
         </h1>
-        <p className="text-lg text-gray-700/90 max-w-xl mx-auto text-center px-4 tracking-wide my-6">
+        <p className="mx-auto my-6 max-w-xl px-4 text-center text-lg tracking-wide text-gray-700/90">
           Automated bookkeeping, effortless tax filing, real‑time insights. Set
-          up in 10 mins. Back to building by{" "}
+          up in 10 mins. Back to building by{' '}
           <span>
             {displayHour}
             <span className="animate-ping">:</span>
@@ -47,13 +47,13 @@ const Hero = () => {
       </div>
       <div className="hero-cta flex items-center gap-2">
         <Btn text="Get started" />
-        <button className=" tracking-wide text-black px-3 py-2 font-semibold text-sm rounded-lg bg-transparent hover:bg-black/10 cursor-pointer duration-200">
+        <button className="cursor-pointer rounded-lg bg-transparent px-3 py-2 text-sm font-semibold tracking-wide text-black duration-200 hover:bg-black/10">
           Pricing
           <FaArrowRight
             size={10}
             color="[#1E1F25]"
             opacity={0.5}
-            className="inline-block ml-2"
+            className="ml-2 inline-block"
           />
         </button>
       </div>
@@ -66,13 +66,11 @@ const Hero = () => {
       <div className="img-container relative mt-10">
         <div
           id="center-line"
-          className="h-[2px] w-full  z-10 absolute bg-gradient-to-r
-           from-neutral-200/20 via-neutral-300/50 to-neutral-200/20
-           right-0 -top-8"
+          className="absolute -top-8 right-0 z-10 h-[2px] w-full bg-gradient-to-r from-neutral-200/20 via-neutral-300/50 to-neutral-200/20"
         ></div>
 
         <img
-          className="rounded-xl shadow-2xl object-cover object-top-left mask-b-from-20% to-40%"
+          className="rounded-xl to-40% mask-b-from-20% object-cover object-top-left shadow-2xl"
           src={dashboardImage}
           alt="Dashboard Image"
         />
