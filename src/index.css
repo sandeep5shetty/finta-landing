@@ -1,12 +1,6 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-
 @custom-variant dark (&:where(.dark, .dark *));
-
-
-
 
 .animate-ping {
   animation: ping 1s steps(1, end) infinite !important;
