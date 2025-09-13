@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="flex items-center font-semibold">
         <a
           href="#"
-          className="rounded-full border border-gray-300 bg-gray-200/70 px-3 py-1.5 text-xs tracking-wide duration-200 hover:-translate-y-1 hover:bg-slate-200"
+          className="rounded-full border border-gray-300 bg-gray-200/70 px-3 py-1.5 text-xs tracking-wide duration-200 hover:-translate-y-1 hover:bg-slate-200 dark:bg-slate-400/50 dark:hover:bg-slate-600"
         >
           Cap table basics
           <FaArrowRight
@@ -30,10 +30,10 @@ const Hero = () => {
       </div>
 
       <div className="hero-text mt-10 max-w-2xl text-center">
-        <h1 className="text-5xl leading-14 font-semibold tracking-tight text-shadow-neutral-900 md:text-6xl md:leading-17">
+        <h1 className="text-5xl leading-14 font-semibold tracking-tight text-shadow-neutral-900 max-sm:text-4xl md:text-6xl md:leading-17">
           Magically simplify accounting and taxes
         </h1>
-        <p className="mx-auto my-6 max-w-xl px-4 text-center text-lg tracking-wide text-gray-700/90">
+        <p className="mx-auto my-6 max-w-xl px-4 text-center text-lg tracking-wide text-gray-700/90 dark:text-gray-300/50">
           Automated bookkeeping, effortless tax filing, real‑time insights. Set
           up in 10 mins. Back to building by{' '}
           <span>
@@ -47,7 +47,7 @@ const Hero = () => {
       </div>
       <div className="hero-cta flex items-center gap-2">
         <Btn text="Get started" />
-        <button className="cursor-pointer rounded-lg bg-transparent px-3 py-2 text-sm font-semibold tracking-wide text-black duration-200 hover:bg-black/10">
+        <button className="cursor-pointer rounded-lg bg-transparent px-3 py-2 text-sm font-semibold tracking-wide text-black duration-200 hover:bg-black/10 dark:text-slate-50 dark:hover:bg-slate-700/30">
           Pricing
           <FaArrowRight
             size={10}
@@ -66,7 +66,7 @@ const Hero = () => {
       <div className="img-container relative mt-10">
         <div
           id="center-line"
-          className="absolute -top-8 right-0 z-10 h-[2px] w-full bg-gradient-to-r from-neutral-200/20 via-neutral-300/50 to-neutral-200/20"
+          className="absolute -top-8 right-0 z-10 h-[1px] w-full bg-gradient-to-r from-neutral-200/20 via-neutral-300/50 to-neutral-200/20 dark:from-transparent dark:via-neutral-700/40 dark:to-transparent"
         ></div>
 
         <img
