@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import BentoSection from './components/BentoSection';
 
 const App = () => {
   return (
@@ -8,15 +9,16 @@ const App = () => {
       <div className="layout-container relative mx-auto h-screen max-w-5xl">
         <div
           id="left-line"
-          className="absolute top-0 -left-2 z-10 h-full w-[2px] bg-gradient-to-b from-neutral-200 via-neutral-300/50 to-transparent dark:from-neutral-800/50 dark:via-neutral-700/40 dark:to-transparent"
+          className="absolute top-0 left-0 z-10 h-full w-[2px] bg-gradient-to-b from-neutral-200 via-neutral-300/50 to-transparent dark:from-neutral-800/50 dark:via-neutral-700/40 dark:to-transparent"
         ></div>
 
         <div
           id="right-line"
-          className="absolute top-0 -right-2 z-10 h-full w-[2px] bg-gradient-to-b from-neutral-200 via-neutral-300/50 to-transparent dark:from-neutral-800/50 dark:via-neutral-700/40 dark:to-transparent"
+          className="absolute top-0 right-0 z-10 h-full w-[2px] bg-gradient-to-b from-neutral-200 via-neutral-300/50 to-transparent dark:from-neutral-800/50 dark:via-neutral-700/40 dark:to-transparent"
         ></div>
         <Navbar />
         <Hero />
+        <BentoSection />
       </div>
     </div>
   );
