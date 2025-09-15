@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrainIcon } from './Icons';
+import { BrainIcon, MouseBoxIcon, OpenAILogo } from './Icons';
 
 const BentoSection = () => {
   return (
@@ -17,18 +17,37 @@ const BentoSection = () => {
           <CardSkeleton
             className={'flex items-center justify-center bg-blue-200 text-4xl'}
           >
-            Hey
+            <ModelsContainer>
+              <OpenAIComponent>
+                <OpenAIText>
+                  <PoweredBy>
+                    <OpenAILogo className="size-6" />
+                    <span className="text-sm">OpenAI</span>
+                  </PoweredBy>
+                  <ModelName>GPT 5</ModelName>
+                </OpenAIText>
+                <OpenAiBtn> </OpenAiBtn>
+              </OpenAIComponent>
+              <ModelCard>
+                <TopSection>
+                  <div className="size-4 rounded-full bg-red-600"></div>
+                  <div className="size-4 rounded-full bg-yellow-500"></div>
+                  <div className="size-4 rounded-full bg-green-600"></div>
+                </TopSection>
+                <BottomSection></BottomSection>
+              </ModelCard>
+            </ModelsContainer>
           </CardSkeleton>
         </BentoCard>
 
         <BentoCard>
           <CardHeader>
-            <BrainIcon className="mt-1 size-6" />
-            <CardTitle>LLM Model Selector</CardTitle>
+            <MouseBoxIcon className="mt-1 size-6" />
+            <CardTitle>Text to workflow builder</CardTitle>
           </CardHeader>
           <CardDescription>
-            Track real-time activity of agents with detailed records of
-            triggers, tools used, outcomes, and timestamps.
+            Preview and debug workflow logic in a safe sandbox before deploying,
+            helping you iterate with confidence.
           </CardDescription>
           <CardSkeleton
             className={'flex items-center justify-center bg-red-200 text-4xl'}
@@ -40,7 +59,7 @@ const BentoSection = () => {
         <BentoCard className="col-span-1 lg:col-span-2">
           <CardHeader>
             <BrainIcon className="mt-1 size-6" />
-            <CardTitle>LLM Model Selector</CardTitle>
+            <CardTitle>Native Tools Integrationr</CardTitle>
           </CardHeader>
           <CardDescription>
             Track real-time activity of agents with detailed records of
@@ -89,8 +108,68 @@ const CardHeader = ({ children }) => {
 const CardSkeleton = ({ children, className }) => {
   return (
     <div
-      className={`card-skeleton mt-4 h-30 w-full rounded-md bg-emerald-200/70 ${className}`}
+      className={`card-skeleton mt-4 h-100 w-full rounded-md bg-gray-300/20 ${className}`}
     >
+      {children}
+    </div>
+  );
+};
+
+const ModelsContainer = ({ children }) => {
+  return (
+    <div className="models-container relative mt-18 size-[70%] rounded-2xl bg-gray-200 shadow-lg">
+      {children}
+    </div>
+  );
+};
+
+const ModelCard = ({ children }) => {
+  return <div className="model-card relative">{children}</div>;
+};
+
+const TopSection = ({ children }) => {
+  return (
+    <div className="top-section absolute top-8 left-4 flex gap-2">
+      {children}
+    </div>
+  );
+};
+
+const BottomSection = () => {
+  return <div className="bottom-section"></div>;
+};
+
+const OpenAIComponent = ({ children }) => {
+  return (
+    <div className="openai-component absolute -top-12 -right-12 w-[65%] rounded-xl bg-gray-200 shadow-md">
+      {children}
+    </div>
+  );
+};
+
+const OpenAIText = ({ children }) => {
+  return (
+    <div className="openai-text flex items-center justify-between border-b border-gray-300 px-2 py-2">
+      {children}
+    </div>
+  );
+};
+
+const OpenAiBtn = () => {
+  return (
+    <button className="openai-btn text-xstext-white m-2 mb-3 flex items-center gap-2 overflow-visible rounded-md border border-[#2b7fff] bg-sky-200/60 px-3 tracking-normal text-[#2b7fff]">
+      <span className="text-lg">Connected</span>
+    </button>
+  );
+};
+
+const PoweredBy = ({ children }) => {
+  return <div className="powered-by flex items-center gap-2">{children}</div>;
+};
+
+const ModelName = ({ children }) => {
+  return (
+    <div className="model-name text-sm font-semibold tracking-wider text-neutral-600">
       {children}
     </div>
   );
