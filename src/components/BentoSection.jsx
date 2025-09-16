@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrainIcon, MouseBoxIcon, OpenAILogo } from './Icons';
+import { BrainIcon, MouseBoxIcon, OpenAILogo, WindowIcon } from './Icons';
 
 const BentoSection = () => {
   return (
@@ -34,7 +34,11 @@ const BentoSection = () => {
                   <div className="size-4 rounded-full bg-yellow-500"></div>
                   <div className="size-4 rounded-full bg-green-600"></div>
                 </TopSection>
-                <BottomSection></BottomSection>
+                <BottomSection>
+                  <AllModels>
+                    <WindowIcon className="size-6" />
+                  </AllModels>
+                </BottomSection>
               </ModelCard>
             </ModelsContainer>
           </CardSkeleton>
@@ -173,6 +177,10 @@ const ModelName = ({ children }) => {
       {children}
     </div>
   );
+};
+
+const AllModels = ({ children }) => {
+  return <div className="all-models flex items-center gap-2">{children}</div>;
 };
 
 export default BentoSection;
