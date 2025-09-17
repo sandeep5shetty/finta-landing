@@ -128,7 +128,11 @@ const ModelsContainer = ({ children }) => {
 };
 
 const ModelCard = ({ children }) => {
-  return <div className="model-card relative">{children}</div>;
+  return (
+    <div className="model-card relative flex flex-col justify-center">
+      {children}
+    </div>
+  );
 };
 
 const TopSection = ({ children }) => {
@@ -139,8 +143,8 @@ const TopSection = ({ children }) => {
   );
 };
 
-const BottomSection = () => {
-  return <div className="bottom-section"></div>;
+const BottomSection = ({ children }) => {
+  return <div className="bottom-section mt-25 ml-10">{children}</div>;
 };
 
 const OpenAIComponent = ({ children }) => {

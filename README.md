@@ -2,6 +2,8 @@
 
 Finta Landing is a modern, responsive landing page built with React and Vite. It showcases Finta's features, integrations, and workflow tools with a clean UI and interactive components.
 
+Developed by Sandeep Shetty
+
 ## Features
 
 - Responsive design with Tailwind CSS
